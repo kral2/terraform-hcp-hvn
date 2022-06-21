@@ -21,3 +21,9 @@ variable "hvn_id_prefix" {
   type        = string
   default     = "my-hvn"
 }
+
+variable "hvn_id" {
+  description = "(String) The ID of the HashiCorp Virtual Network (HVN). If used, `hvn_id_prefix` will be ignored."
+  type        = string
+  default     = null
+}

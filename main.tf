@@ -1,6 +1,6 @@
 // Create an HVN
 resource "hcp_hvn" "network" {
-  hvn_id         = local.hvn_id
+  hvn_id         = var.hvn_id != null ? var.hvn_id : local.hvn_id
   cloud_provider = var.hcp_cloud_provider
   region         = var.hcp_region
   cidr_block     = var.hvn_cidr
