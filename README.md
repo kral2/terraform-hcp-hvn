@@ -1,8 +1,14 @@
-# HVN for HCP Network
+# HCP Network
 
 ## About
 
-This module provision a [HashiCorp Virtual Network](https://cloud.hashicorp.com/docs/hcp/network) (HVN) for [HashiCorp Cloud Platform](https://cloud.hashicorp.com/) (HCP). It currently supports provisioning an HVN on Amazon Web Services (AWS) or Microsoft Azure.
+This module provision the virtual networking of your [HashiCorp Cloud Platform](https://cloud.hashicorp.com/) (HCP) account. It is designed to be flexible and composable with other modules.
+
+It currently supports provisioning the following resources:
+
+- an [HashiCorp Virtual Network](https://cloud.hashicorp.com/docs/hcp/network) (HVN) on Amazon Web Services (AWS) or Microsoft Azure.
+
+Upcoming features: peering, gateways and routes.
 
 ## Usage
 
@@ -10,7 +16,7 @@ Provisioning a new HVN is as simple as inserting a module stanza like this one:
 
 ```HCL
 module "my_hvn_aws" {
-  source = "kral2/hvn/hcp"
+  source = "kral2/hcp-network/hcp"
   hvn_cidr = "172.25.16.0/20"
   hvn_id_prefix = "my-hvn"
   hcp_cloud_provider = "aws"
