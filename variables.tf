@@ -1,7 +1,7 @@
-variable "hvn_id_prefix" {
-  description = "(String) The prefix for ID of the HashiCorp Virtual Network (HVN), to be concatenated with hcp cloud provider and hcp region values."
+variable "hvn_cidr" {
+  description = "(String) The CIDR range of the HVN. If this is not provided, the service will provide a default value."
   type        = string
-  default     = "my-hvn"
+  default     = null
 }
 
 variable "hcp_cloud_provider" {
@@ -13,11 +13,11 @@ variable "hcp_cloud_provider" {
 variable "hcp_region" {
   description = "(String) The region where the HVN is located."
   type        = string
-  default     = "eu-central-1"
+  default     = "us-east-1"
 }
 
-variable "hvn_cidr" {
-  description = "((String) The CIDR range of the HVN. If this is not provided, the service will provide a default value."
+variable "hvn_id_prefix" {
+  description = "(String) The prefix for ID of the HashiCorp Virtual Network (HVN), to be concatenated with hcp cloud provider and hcp region values."
   type        = string
-  default     = null
+  default     = "my-hvn"
 }
