@@ -17,5 +17,5 @@ locals {
   // when passing null (module's default value), hvn_cidr is automatically set by the provider (currently 172.25.16.0/20 on both AWS and Azure).
   // We want to preserve this behavior.
   // If needing a specific value is passed for hvn_cidr, it will take precedence over the null value
-  cidr_block = length(var.hvn_cidr) != 0 ? var.hvn_id : null
+  cidr_block = length(var.hvn_cidr) != 0 ? var.hvn_cidr : null
 }
