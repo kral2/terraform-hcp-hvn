@@ -1,7 +1,7 @@
 variable "hvn_cidr" {
   description = "(String) The CIDR range of the HVN. If this is not provided, the service will provide a default value."
   type        = string
-  default     = "" // default value is an empty string, because null is interpreted as a required input variable
+  default     = "" // default value is an empty string, because null is interpreted as a required input variable in the registry
 }
 
 variable "hcp_cloud_provider" {
@@ -20,7 +20,7 @@ variable "hvn_id" {
   description = "(String) The ID of the HashiCorp Virtual Network (HVN). Provide a value only if you prefer a fully custom `hvn_id`: `hvn_id_prefix` will be ignored, no transformation will be made to this string."
   type        = string
   nullable    = false
-  default     = "" // default value is an empty string, because null is interpreted as a required input variable
+  default     = "" // default value is an empty string, because null is interpreted as a required input variable in the registry
 }
 
 variable "hvn_id_prefix" {
