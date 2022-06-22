@@ -16,14 +16,15 @@ variable "hcp_region" {
   default     = "us-east-1"
 }
 
-variable "hvn_id_prefix" {
-  description = "(String) The prefix for ID of the HashiCorp Virtual Network (HVN), to be concatenated with hcp cloud provider and hcp region values."
+variable "hvn_id" {
+  description = "(String) The ID of the HashiCorp Virtual Network (HVN). Provide a value only if you prefer a fully custom `hvn_id`: `hvn_id_prefix` will be ignored, no transformation will be made to this string."
   type        = string
-  default     = "my-hvn"
+  nullable    = false
+  default     = ""
 }
 
-variable "hvn_id" {
-  description = "(String) The ID of the HashiCorp Virtual Network (HVN). If used, `hvn_id_prefix` will be ignored."
+variable "hvn_id_prefix" {
+  description = "(String) The prefix for ID of the HashiCorp Virtual Network (HVN). It will be concatenated with `var.hcp_cloud_provider` and `var.hcp_region` values."
   type        = string
-  default     = null
+  default     = "my-hvn"
 }

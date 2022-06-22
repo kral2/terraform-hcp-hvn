@@ -11,5 +11,5 @@ output "hcp_hvn_cidr_block" {
 
 output "hcp_hvn_all_attributes" {
   description = "all attributes of the created HVN"
-  value = { for k, v in hcp_hvn.network : k => v }
+  value       = { for k, v in hcp_hvn.network : k => v }
 }
