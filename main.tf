@@ -1,13 +1,19 @@
 // Create an HVN
 resource "hcp_hvn" "network" {
-  hvn_id         = local.hvn_id
+  hvn_id         = "${local.hvn_id}-${resource.random_string.hvn_id.result}"
   cloud_provider = var.hcp_cloud_provider
   region         = var.hcp_region
   cidr_block     = local.cidr_block
 }
 
+resource "random_string" "hvn_id" {
+  length = 6
+  upper = false
+  special = false
+}
+
 locals {
-  // Build hvn_id by concatenating user <user supplied prefix> + <cloud provider> + <hcp region>. E.g: my-hvn-aws-eu-central-1
+  // Build hvn_id by concatenating user <user supplied prefix> + <cloud provider> + <hcp region> + <6 chars random string>. E.g: my-hvn-aws-eu-central-1-455qwr
   // Will be used only if var.hvn_id is not defined.
   // This gives choice to use a consistent naming pattern when user provides a value for var.hvn_id_prefix,
   // or use a fully custom value to comply with a particular naming convention in place. 

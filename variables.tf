@@ -5,7 +5,7 @@ variable "hvn_cidr" {
 }
 
 variable "hcp_cloud_provider" {
-  description = "(String) The provider where the HVN is located. Only 'aws' or 'azure' are available at this time."
+  description = "(String) The provider where the HVN is located. Only 'aws' or 'azure' are supported by the provider at this time."
   type        = string
   default     = "aws"
 }
