@@ -1,4 +1,5 @@
 output "my_default_hvn" {
+  description = "HVN Information summary"
   value = {
     hcp_hvn_id             = module.my_default_hvn.hcp_hvn_id
     hcp_hvn_cidr_block     = module.my_default_hvn.hcp_hvn_cidr_block
@@ -8,6 +9,7 @@ output "my_default_hvn" {
 }
 
 output "my_hvn_aws" {
+  description = "HVN Information summary"
   value = {
     hcp_hvn_id             = module.my_hvn_aws.hcp_hvn_id
     hcp_hvn_cidr_block     = module.my_hvn_aws.hcp_hvn_cidr_block
@@ -17,6 +19,7 @@ output "my_hvn_aws" {
 }
 
 output "my_hvn_azure" {
+  description = "HVN Information summary"
   value = {
     hcp_hvn_id             = module.my_hvn_azure.hcp_hvn_id
     hcp_hvn_cidr_block     = module.my_hvn_azure.hcp_hvn_cidr_block
