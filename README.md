@@ -55,6 +55,7 @@ Note: To authenticate Terraform with the HCP provider, you first need to create 
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2.0 |
 | <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) | >= 0.33.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.0.0 |
 ## Modules
 
 No modules.
