@@ -20,7 +20,7 @@ module "my_default_hvn" {
 }
 ```
 
-If you need more specific inputs, you can provide them to customize the HVN to fit your requirements.
+If you need more specific inputs, you can provide them as additional Input Variables in order to customize the HVN for your requirements.
 
 ```HCL
 module "my_hvn_aws" {

@@ -7,8 +7,8 @@ resource "hcp_hvn" "network" {
 }
 
 resource "random_string" "hvn_id" {
-  length = 6
-  upper = false
+  length  = 6
+  upper   = false
   special = false
 }
 
