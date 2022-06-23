@@ -12,11 +12,19 @@ Upcoming features: peering, gateways and routes.
 
 ## Usage
 
-Provisioning a new HVN is as simple as inserting a module stanza like this one:
+Provisioning a new HVN is as simple as inserting a module stanza like this one on your configuration:
+
+```HCL
+module "my_default_hvn" {
+  source  = "kral2/network/hcp"
+}
+```
+
+If you need more specific inputs, you can provide them to customize the HVN to fit your requirements.
 
 ```HCL
 module "my_hvn_aws" {
-  source = "kral2/hcp-network/hcp"
+  source = "kral2/network/hcp"
   hvn_cidr = "172.25.16.0/20"
   hvn_id_prefix = "my-hvn"
   hcp_cloud_provider = "aws"
@@ -24,7 +32,7 @@ module "my_hvn_aws" {
 }
 ```
 
-Note: This module uses the HCP Terraform provider, so you will need to refer to it in your Terraform configuration. See below.
+Note: This module uses the HCP Terraform provider, which requires to be authenticated before you can use it. See below on how to declare it in your Terraform configuration.
 
 ### Declaring the HCP Terraform provider in your configuration
 

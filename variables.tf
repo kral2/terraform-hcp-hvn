@@ -26,5 +26,5 @@ variable "hvn_id" {
 variable "hvn_id_prefix" {
   description = "(String) The prefix for ID of the HashiCorp Virtual Network (HVN). It will be concatenated with `var.hcp_cloud_provider` and `var.hcp_region` values."
   type        = string
-  default     = "my-hvn"
+  default     = "hvn"
 }
