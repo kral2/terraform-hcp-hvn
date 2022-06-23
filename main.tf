@@ -16,7 +16,7 @@ locals {
   // Build hvn_id by concatenating user <user supplied prefix> + <cloud provider> + <hcp region> + <6 chars random string>. E.g: my-hvn-aws-eu-central-1-455qwr
   // Will not be used only if a value var.hvn_id is provided by the module stanza.
   // This gives choice to use a consistent naming pattern when user provides a value for var.hvn_id_prefix,
-  // or use the value provided for var.hvn_id with no string transformation. 
+  // or use the value provided for var.hvn_id with no string transformation.
   hvn_id = "${var.hvn_id_prefix}-${var.hcp_cloud_provider}-${var.hcp_region}-${resource.random_string.hvn_id.result}"
 
   // having null as default value makes the input variable 'required' which is not the the intention.
